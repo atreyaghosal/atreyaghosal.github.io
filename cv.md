@@ -8,8 +8,6 @@ PhD researcher with the UtahNLP group at the University of Utah, advised by [Pro
 
 My research focuses on safe, trustworthy and human-aligned AI, and on human-AI collaboration. By integrating principles from machine learning and UI/UX design, I strive to create AI systems that enhance human productivity, skill and decision-making. My work has identified the information that people need, and built AI assistants that give them accurate, timely and interpretable responses. My current focus is on aligning Large Language Models to broad, narrative-level value systems.
 
-I'm eager to collaborate and contribute to the future of AI for business needs.
-
 ## Publications
 
 <div> <ul>
@@ -20,9 +18,6 @@ I'm eager to collaborate and contribute to the future of AI for business needs.
     <p>Fateme Hashemi Chaleshtori, Atreya Ghosal, Alexander Gill, Purbid Bambroo, and Ana Marasović. 2024. <a href="https://aclanthology.org/2024.findings-emnlp.439/">On Evaluating Explanation Utility for Human-AI Decision Making in NLP.</a> In Yaser Al-Onaizan, Mohit Bansal, and Yun-Nung Chen, editors, <em>Findings of the Association for Computational Linguistics: EMNLP 2024</em>, pages 7456–7504, Miami, Florida, USA, November. Association for Computational Linguistics.</p>
   </li>
   <li>
-    <p>Fateme Hashemi Chaleshtori, Atreya Ghosal, and Ana Marasović. 2023. <a href="https://openreview.net/forum?id=8BR8EaWNTZ">On Evaluating Explanation Utility for Human-AI Decision-Making in NLP.</a> In <em>XAI in Action: Past, Present, and Future Applications</em>.</p>
-  </li>
-  <li>
     <p>Vivek Gupta, Riyaz A Bhat, Atreya Ghosal, Manish Shrivastava, Maneesh Singh, and Vivek Srikumar. 2022. <a href="https://aclanthology.org/2022.tacl-1.38/">Is My Model Using The Right Evidence? Systematic Probes for Examining Evidence-Based Tabular Reasoning.</a> <em>Transactions of the Association for Computational Linguistics</em>, 10.</p>
   </li>
 </ul> </div>
@@ -30,7 +25,7 @@ I'm eager to collaborate and contribute to the future of AI for business needs.
 
 ## Education
 
-`2023-Current` _PhD in Computer Science_ \\
+`2023-Current` _PhD in Machine Learning_ \\
 __University of Utah__
 
 `2016-2022` _M.S. in Computational Linguistics_ \\
@@ -48,9 +43,6 @@ Developed a medical assistant for under-resourced populations in India.
 `2022` _NLP Intern_ \\
 __Uniphore__ \\
 Worked on translation quality evaluation and improvement.
-
-`2020-2022` _Researcher_ \\
-__Language Technologies Research Centre (LTRC), International Institute of Information Technology, Hyderabad__
 
 `2019` _Software Developer_ \\
 __Google Summer of Code, Haskell.org__ \\
