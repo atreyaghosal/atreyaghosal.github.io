@@ -1,5 +1,29 @@
-// The roles become custom properties so the dark scheme is one media query
-// rather than a second copy of every rule.
+// The roles become custom properties so the dark scheme is one set of
+// overrides rather than a second copy of every rule. It applies when the
+// system asks for dark and the reader hasn't picked light with the header
+// toggle, or whenever the reader has picked dark (see theme-toggle.html).
+
+=dark-roles
+  --surface: #{$d-surface}
+  --surface-low: #{$d-surface-low}
+  --surface-container: #{$d-surface-container}
+  --surface-high: #{$d-surface-high}
+  --on-surface: #{$d-on-surface}
+  --on-surface-variant: #{$d-on-surface-variant}
+  --outline: #{$d-outline}
+  --outline-variant: #{$d-outline-variant}
+  --primary: #{$d-primary}
+  --on-primary: #{$d-on-primary}
+  --primary-container: #{$d-primary-container}
+  --on-primary-container: #{$d-on-primary-container}
+  --secondary-container: #{$d-secondary-container}
+  --on-secondary-container: #{$d-on-secondary-container}
+  --visited: #{$d-visited}
+  --error: #{$d-error}
+  --code-bg: #{$d-code-bg}
+  --code-fg: #{$d-code-fg}
+  --state: #{$d-state}
+  color-scheme: dark
 
 \:root
   --surface: #{$l-surface}
@@ -24,24 +48,8 @@
   color-scheme: light
 
 @media (prefers-color-scheme: dark)
-  \:root
-    --surface: #{$d-surface}
-    --surface-low: #{$d-surface-low}
-    --surface-container: #{$d-surface-container}
-    --surface-high: #{$d-surface-high}
-    --on-surface: #{$d-on-surface}
-    --on-surface-variant: #{$d-on-surface-variant}
-    --outline: #{$d-outline}
-    --outline-variant: #{$d-outline-variant}
-    --primary: #{$d-primary}
-    --on-primary: #{$d-on-primary}
-    --primary-container: #{$d-primary-container}
-    --on-primary-container: #{$d-on-primary-container}
-    --secondary-container: #{$d-secondary-container}
-    --on-secondary-container: #{$d-on-secondary-container}
-    --visited: #{$d-visited}
-    --error: #{$d-error}
-    --code-bg: #{$d-code-bg}
-    --code-fg: #{$d-code-fg}
-    --state: #{$d-state}
-    color-scheme: dark
+  \:root:not([data-theme="light"])
+    +dark-roles
+
+\:root[data-theme="dark"]
+  +dark-roles

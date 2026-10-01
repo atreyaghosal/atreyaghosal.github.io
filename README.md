@@ -4,9 +4,19 @@ permalink: "/"
 layout: page
 ---
 
-PhD researcher affiliated with the UtahNLP group at the University of Utah. My advisor is [Prof. Vivek Srikumar](https://svivek.com/). 
+<div class="about-intro" markdown="1">
+<figure class="portrait">
+  <img src="{{ "/assets/images/about/hike-960.jpg" | relative_url }}" srcset="{{ "/assets/images/about/hike-480.jpg" | relative_url }} 480w, {{ "/assets/images/about/hike-960.jpg" | relative_url }} 960w" sizes="(max-width: 40rem) 22rem, 16rem" width="960" height="1276" alt="On a hike with my labmates">
+</figure>
+
+<div markdown="1">
+
+PhD researcher affiliated with the UtahNLP group at the University of Utah. My advisor is [Prof. Vivek Srikumar](https://svivek.com/).
 
 I work on building safe, trustworthy and human-aligned AI systems. My current focus is on finding methods to align Large Language Models to broad, narrative-level value systems.
+
+</div>
+</div>
 
 ## Publications
 

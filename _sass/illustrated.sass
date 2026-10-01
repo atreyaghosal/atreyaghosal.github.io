@@ -1,6 +1,21 @@
 // Vibrant-visuals toolkit for the "Papers Illustrated" post series.
 // Enable on a post with `illustrated: true` in its front matter.
 
+// Dark mode follows the same rule as the site tokens (see tokens.sass):
+// the system preference unless the reader picked light, or an explicit dark.
+=il-dark
+  --il-red: #ff6b6f
+  --il-orange: #ffab5e
+  --il-yellow: #f0d264
+  --il-green: #4ade80
+  --il-teal: #2dd4bf
+  --il-blue: #3b82f6
+  --il-babyblue: #a5d8f5
+  --il-purple: #a78bfa
+  --il-pink: #f472b6
+  --il-cyan: #22d3ee
+  --il-gray: #9ca3af
+
 \:root
   --il-red: #e5484d
   --il-orange: #f2994a
@@ -13,22 +28,14 @@
   --il-pink: #ec4899
   --il-cyan: #0891b2
   --il-gray: #6b7280
-  --il-page: #{$light}
+  --il-page: var(--surface)
 
 @media (prefers-color-scheme: dark)
-  \:root
-    --il-red: #ff6b6f
-    --il-orange: #ffab5e
-    --il-yellow: #f0d264
-    --il-green: #4ade80
-    --il-teal: #2dd4bf
-    --il-blue: #3b82f6
-    --il-babyblue: #a5d8f5
-    --il-purple: #a78bfa
-    --il-pink: #f472b6
-    --il-cyan: #22d3ee
-    --il-gray: #9ca3af
-    --il-page: #{$dark}
+  \:root:not([data-theme="light"])
+    +il-dark
+
+\:root[data-theme="dark"]
+  +il-dark
 
 $il-colors: "red" "orange" "yellow" "green" "teal" "blue" "babyblue" "purple" "pink" "cyan" "gray"
 
@@ -46,7 +53,7 @@ $il-colors: "red" "orange" "yellow" "green" "teal" "blue" "babyblue" "purple" "p
   font-weight: 600
   font-family: $font-family
   font-size: .95em
-  color: $light
+  color: $l-surface
 
   sub
     font-size: .7em
@@ -54,11 +61,14 @@ $il-colors: "red" "orange" "yellow" "green" "teal" "blue" "babyblue" "purple" "p
 
 // The dark-mode palette is light enough that white text on it is hard to read
 @media (prefers-color-scheme: dark)
-  .tok
-    color: $dark
+  html:not([data-theme="light"]) .tok
+    color: $d-surface
+
+html[data-theme="dark"] .tok
+  color: $d-surface
 
 .tok-yellow, .tok-babyblue
-  color: $dark
+  color: $l-on-surface
 
 // Outlined, unfilled tile for diagram items that aren't math symbols
 .tok-plain
@@ -77,11 +87,7 @@ $il-colors: "red" "orange" "yellow" "green" "teal" "blue" "babyblue" "purple" "p
 
 // Muted via color, not opacity, so colored tiles inside notes/captions stay vivid
 .tok-note, .caption
-  color: lighten($dark, 30%)
-
-@media (prefers-color-scheme: dark)
-  .tok-note, .caption
-    color: darken($light, 25%)
+  color: var(--on-surface-variant)
 
 .tok-note
   display: block
@@ -123,7 +129,7 @@ $il-colors: "red" "orange" "yellow" "green" "teal" "blue" "babyblue" "purple" "p
 // Callout box for asides/explanations, e.g. <div class="box box-blue">...</div>
 .box
   border-left: .3em solid var(--il-blue)
-  background: reduce(6)
+  background: var(--surface-container)
   padding: .8em 1em
   border-radius: .3em
   margin: 1.5em 0
@@ -167,16 +173,13 @@ html[data-tok="off"] .tok:not(.tok-plain)
   padding-right: .1em
 
 // The toggle itself, in the page header
-body > header nav
-  margin-left: auto
-
 .tok-toggle
   display: flex
   align-items: center
   gap: .3em
-  margin: .5em 0 .5em 2.2em
+  margin: .5em 0
   padding-left: 1em
-  border-left: 1px solid rgba($light, .25)
+  border-left: 1px solid var(--outline-variant)
   font-size: .85em
 
   // Narrow screens: the toggle wraps onto its own line, so drop the divider
@@ -194,14 +197,15 @@ body > header nav
     font: inherit
     color: inherit
     background: none
-    border: 1px solid rgba($light, .35)
+    border: 1px solid var(--outline-variant)
     border-radius: 1em
     padding: .15em .75em
     cursor: pointer
 
     &:hover
-      border-color: rgba($light, .7)
+      border-color: var(--outline)
 
     &[aria-pressed="true"]
-      background: rgba($light, .2)
-      border-color: rgba($light, .7)
+      background: var(--secondary-container)
+      color: var(--on-secondary-container)
+      border-color: var(--outline)

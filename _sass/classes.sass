@@ -36,8 +36,34 @@
   justify-content: center
   color: var(--on-surface-variant)
 
+// Lets a <button> share the icon button look of the links
+button.iconbtn
+  border: none
+  background-color: transparent
+  font: inherit
+  padding: 0
+  cursor: pointer
+
 .iconbtn:hover
   +state(.08)
+
+// Light/dark toggle: shows the moon in light mode and the sun in dark mode,
+// following the same rule as the colour tokens (see tokens.sass)
+.theme-toggle .icon-sun
+  display: none
+
+=theme-toggle-dark
+  .theme-toggle .icon-sun
+    display: block
+  .theme-toggle .icon-moon
+    display: none
+
+@media (prefers-color-scheme: dark)
+  html:not([data-theme="light"])
+    +theme-toggle-dark
+
+html[data-theme="dark"]
+  +theme-toggle-dark
 
 // Tabs
 body > nav a

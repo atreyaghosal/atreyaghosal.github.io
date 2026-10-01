@@ -104,6 +104,39 @@ img
   height: auto
   margin: .5rem 0
 
+// A photo kept to a comfortable size and centred in the reading column
+figure.portrait
+  max-width: 22rem
+  margin: 2rem auto
+
+  img
+    display: block
+    width: 100%
+    margin: 0
+
+// About page: photo on the left, intro text beside it. Narrow screens stack
+// them, photo first, rather than squeeze the text into a sliver.
+.about-intro
+  display: grid
+  grid-template-columns: 16rem 1fr
+  gap: 2rem
+  align-items: start
+  margin-bottom: 2rem
+
+  figure.portrait
+    margin: .5rem 0 0
+
+  > div > p:first-child
+    margin-top: 0
+
+@media (max-width: 40rem)
+  .about-intro
+    grid-template-columns: 1fr
+    gap: 1.5rem
+
+    figure.portrait
+      margin: 0 auto
+
 li
   margin: .25rem 0
 
