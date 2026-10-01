@@ -5,7 +5,7 @@ together and how to do common tasks, read [DOCS.md](DOCS.md).
 
 ## What this is
 
-Atreya Ghosal's personal site and blog: a Jekyll site served by GitHub Pages
+Atreya Ghosal's personal site and writing: a Jekyll site served by GitHub Pages
 from the `master` branch of `atreyaghosal/atreyaghosal.github.io`. It started
 as a fork of the [contrast](https://github.com/niklasbuschmann/contrast) theme
 (remote `upstream`), and the theme has since been rebuilt on Material 3. Don't

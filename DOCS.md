@@ -33,10 +33,10 @@ editing the config.
 | URL | Source | Notes |
 | --- | --- | --- |
 | `/` | `README.md` | About page: bio, photo, publications. Its front matter sets `permalink: "/"`. |
-| `/blog/` | `index.html` | Intro, nav buttons, post cards with excerpts. |
+| `/writing/` | `index.html` | Intro, nav buttons, post cards with excerpts. |
 | `/cv/` | `cv.md` | CV, uses `cv_layout`. |
 | `/archive/` | `archive.html` | Every post by date. Linked from the archive icon in the header. |
-| `/<slug>/` | `_posts/YYYY-MM-DD-<slug>.md` | Blog posts (`permalink: /:title/`). |
+| `/<slug>/` | `_posts/YYYY-MM-DD-<slug>.md` | Posts (`permalink: /:title/`). |
 | `/404.html` | `404.html` | |
 | `/feed.xml` | jekyll-feed | Atom feed. |
 
@@ -51,7 +51,7 @@ _layouts/
   cv_layout.html     same as page.html, kept separate for the CV
 _includes/
   menu.html          tab row, built from site.navigation
-  home.html          post cards, used on /blog/
+  home.html          post cards, used on /writing/
   archive.html       dated list of all posts
   meta.html          post title + date
   social.html        footer links with Font Awesome icons
@@ -79,12 +79,12 @@ assets/
 
 - `title`, `description`: site name in the header and `<title>`. `description`
   is the footer text and may contain HTML.
-- `intro`: the paragraph at the top of `/blog/`.
+- `intro`: the paragraph at the top of `/writing/`.
 - `permalink: /:title/`: post URLs are the slug from the filename.
 - `excerpt_separator: "\n\n\n"`: a post's excerpt ends at its first two blank
   lines in a row.
 - `date_format`: date format on cards and post headers.
-- `show_excerpts`: `true` shows cards on `/blog/`, `false` shows the plain archive list.
+- `show_excerpts`: `true` shows cards on `/writing/`, `false` shows the plain archive list.
 - `navigation`: the tab row. Each entry is `{file: "name.md"}` (title and URL
   come from that page) or `{title, url}`.
 - `external`: footer links. `icon` is any Font Awesome 5 icon name (`github`,
@@ -143,7 +143,7 @@ fresh HTML with a stale cached stylesheet.
    ```
 
 2. Write the opening paragraph(s), then leave **two blank lines**. Everything
-   above them becomes the excerpt on `/blog/`.
+   above them becomes the excerpt on `/writing/`.
 3. Put images in `assets/images/my_slug/` and reference them with
    `relative_url`. For large images, export a 1× and a 2× version and use
    `srcset`, as in `_posts/2025-08-20-unequal_voices.md`:
@@ -220,7 +220,7 @@ actual Jekyll or Sass error. Reproduce it locally with `bundle exec jekyll build
 ## Known issues
 
 - Pagination markup exists in `home.html`, but `jekyll-paginate` isn't
-  enabled, so `/blog/` lists every post.
+  enabled, so `/writing/` lists every post.
 - The Unequal Voices post body refers to the paper as "The Narrow Lens: LLM
   Bias and Queer Representation", while the title and publication list use
   "Unequal Voices".
