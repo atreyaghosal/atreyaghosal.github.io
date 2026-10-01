@@ -28,3 +28,19 @@ comments:
 
 plugins:
  - jekyll-feed
+
+# Setting this replaces Jekyll's default list, so the defaults are repeated.
+# Repo docs and wiki/ are listed because Pages renders front-matter-less .md
+# files too, and neither is meant to be public.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - AGENTS.md
+  - CLAUDE.md
+  - DOCS.md
+  - wiki
