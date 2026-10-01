@@ -1,0 +1,35 @@
+# "Current Projects" on the About page (README.md, via _includes/projects.html).
+#
+# as_of: shown under the heading, so readers know how fresh the list is.
+# Each project:
+#   label        small uppercase line above the title
+#   title        card heading
+#   description  Markdown, one short paragraph
+#   diagram      name of a file in _includes/diagrams/, without .html
+#   caption      one line under the diagram (Markdown)
+#   url          the long-form write-up, as a site path (/slug/)
+
+as_of: "Oct ’26"
+
+items:
+  - label: "Library · Interactive fiction"
+    title: "fictive: an agentic harness for interactive fiction"
+    description: >-
+      A co-creative Python library for programming LLM chains of thought. You
+      write the characters, world and script outline by hand, then direct a
+      small cast of LLM agents in Python code, which interpret the rules and
+      update the game state.
+    diagram: fictive
+    caption: "You author the story; `fictive` turns it into a chain of LLM agents that run the game."
+    url: /agentic_harness_interactive_fiction_part_1/
+
+  - label: "Research · Bias in LLMs"
+    title: "Unequal Voices: how LLMs construct constrained queer narratives"
+    description: >-
+      Some AI bias is less noticeable than hate speech or stereotyping: models
+      carry *thematic* associations with certain groups. Given the same
+      question, a queer persona's answers keep returning to identity-related
+      conflict.
+    diagram: unequal_voices
+    caption: "Neither answer is a problem alone; the repeated focus on identity for queer personas is the bias."
+    url: /unequal_voices/

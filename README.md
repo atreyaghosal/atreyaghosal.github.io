@@ -18,6 +18,8 @@ I work on building safe, trustworthy and human-aligned AI systems. My current fo
 </div>
 </div>
 
+{% include projects.html %}
+
 ## Publications
 
 - Atreya Ghosal, Ashim Gupta, and Vivek Srikumar. [Unequal Voices: How LLMs Construct Constrained Queer Narratives.](https://arxiv.org/abs/2507.15585) Preprint, arXiv, July 21, 2025

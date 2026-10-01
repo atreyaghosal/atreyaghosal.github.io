@@ -1,0 +1,34 @@
+{%- assign projects = site.data.projects -%}
+{%- if projects.items.size > 0 -%}
+<section class="projects" aria-labelledby="current-projects">
+<div class="section-head">
+  <span class="section-badge" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 3 3 7.5l9 4.5 9-4.5L12 3z"></path><path d="m3 12 9 4.5 9-4.5"></path><path d="m3 16.5 9 4.5 9-4.5"></path></svg></span>
+  <div>
+    <h2 id="current-projects">Current Projects</h2>
+    {%- if projects.as_of %}
+    <p>Current as of {{ projects.as_of }}</p>
+    {%- endif %}
+  </div>
+</div>
+<ul class="cards">
+{%- for project in projects.items %}
+  <li>
+    <article class="card project">
+      <p class="meta">{{ project.label }}</p>
+      <h3>{{ project.title }}</h3>
+      {{ project.description | markdownify }}
+      {%- if project.diagram %}
+      <figure class="diagram">
+        {% include diagrams/{{ project.diagram }}.html %}
+        {%- if project.caption %}
+        <figcaption>{{ project.caption | markdownify | remove: "<p>" | remove: "</p>" | strip }}</figcaption>
+        {%- endif %}
+      </figure>
+      {%- endif %}
+      <p class="actions"><a class="btn btn-tonal" href="{{ project.url | relative_url }}" aria-label="Read the write-up: {{ project.title | escape }}">Read the write-up<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></p>
+    </article>
+  </li>
+{%- endfor %}
+</ul>
+</section>
+{%- endif -%}

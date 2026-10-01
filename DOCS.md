@@ -32,7 +32,7 @@ editing the config.
 
 | URL | Source | Notes |
 | --- | --- | --- |
-| `/` | `README.md` | About page: bio, photo, publications. Its front matter sets `permalink: "/"`. |
+| `/` | `README.md` | About page: bio, photo, current projects, publications. Its front matter sets `permalink: "/"`. |
 | `/writing/` | `index.html` | Intro, nav buttons, post cards with excerpts. |
 | `/cv/` | `cv.md` | CV, uses `cv_layout`. |
 | `/archive/` | `archive.html` | Every post by date. Linked from the archive icon in the header. |
@@ -44,6 +44,8 @@ editing the config.
 
 ```
 _config.yml          site settings, navigation tabs, footer links
+_data/
+  projects.yml       Current Projects cards on the About page
 _layouts/
   default.html       page shell: <head>, header, tabs, <main>, footer
   page.html          default + <h1>{title}
@@ -58,13 +60,15 @@ _includes/
   theme-toggle.html  light/dark button and its script
   tok-toggle.html    "Symbols: Color / Muted / Off" toggle, illustrated posts only
   embed.html         responsive 16:9 iframe: {% include embed.html url="..." %}
+  projects.html      Current Projects heading and cards, built from _data/projects.yml
+  diagrams/          one HTML diagram per project, named by its `diagram` key
 _sass/
   index.sass         design tokens as Sass variables: type, layout, shape, colours
   tokens.sass        turns the colour variables into CSS custom properties, light and dark
   font.sass          @font-face for self-hosted Roboto / Roboto Mono
   basic.sass         element styles: typography, links, code, tables, figures
   layout.sass        app bar, tab row, reading column, footer
-  classes.sass       components: buttons, cards, archive list, skip link, syntax colours
+  classes.sass       components: buttons, cards, archive list, skip link, project diagrams, syntax colours
   illustrated.sass   "Papers Illustrated" toolkit (coloured tiles, arrows, callouts)
 assets/
   css/index.sass         entry point → index.css (every page)
@@ -207,6 +211,16 @@ full cheat sheet and that post's symbol-to-colour map.
   so you don't edit it by hand.
 - **Update publications**: they're listed on both the About page
   (`README.md`, Markdown list) and `cv.md` (HTML list). Update both.
+- **Update current projects**: edit `_data/projects.yml`. Change `as_of`
+  whenever you revise the list. Each item takes `label`, `title`,
+  `description` (Markdown), `diagram`, `caption` (Markdown) and `url` (the
+  write-up's path, e.g. `/unequal_voices/`). `diagram` names a file in
+  `_includes/diagrams/` without `.html`; leave it out for a card with no
+  diagram. Diagrams are built from text boxes, not images, using the classes in
+  `classes.sass`: `flow` (a left-to-right pipeline that turns vertical on
+  phones) or `tree` + `branches` + `branch` (one input splitting in two), with
+  `node`, `node-label`, `node-accent` (the highlighted step), `node-dashed`,
+  `chip` and `flow-arrow`. Copy an existing diagram to start a new one.
 - **Change the photo**: replace `assets/images/about/hike-{480,960}.jpg` and
   update `width`/`height`/`alt` in `README.md`.
 

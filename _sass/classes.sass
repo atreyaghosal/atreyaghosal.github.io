@@ -252,3 +252,172 @@ body > nav a.selected::after
     font-style: italic
   .gs
     font-weight: 500
+
+// Section heading that leads a major block of a page (Current Projects on
+// About). It has to outrank the plain h2s around it, so it is larger, in the
+// primary colour, and set off by a rule and an icon badge.
+.section-head
+  display: flex
+  align-items: center
+  gap: 1rem
+  margin: 3rem 0 1.25rem
+  padding-top: 1.5rem
+  border-top: 1px solid var(--outline-variant)
+
+  h2
+    margin: 0
+    font-size: 2rem
+    line-height: 1.25
+    font-weight: 500
+    letter-spacing: -.25px
+    color: var(--primary)
+
+  p
+    margin: .125rem 0 0
+    font-size: .875rem
+    line-height: 1.43
+    color: var(--on-surface-variant)
+
+.section-badge
+  flex-shrink: 0
+  width: 3rem
+  height: 3rem
+  border-radius: $shape-lg
+  background: var(--primary-container)
+  color: var(--on-primary-container)
+  display: inline-flex
+  align-items: center
+  justify-content: center
+
+.projects
+  margin-bottom: 2.5rem
+
+// Project diagrams (_includes/diagrams/). They are built from text boxes, not
+// images, so screen readers and search read them and they follow the scheme.
+.diagram
+  margin: 0
+  padding: 1.25rem 1rem
+  border-radius: $shape-md
+  background: var(--surface-container)
+
+  figcaption
+    margin-top: .75rem
+
+.node
+  display: flex
+  flex-direction: column
+  gap: .25rem
+  padding: .75rem
+  border-radius: $shape-sm
+  background: var(--surface)
+  border: 1px solid var(--outline-variant)
+  font-size: .875rem
+  line-height: 1.4
+
+.node-label
+  font-size: .75rem
+  font-weight: 500
+  letter-spacing: .5px
+  text-transform: uppercase
+  color: var(--on-surface-variant)
+
+.node-label-mono
+  font-family: $mono-family
+  font-size: .8125rem
+  letter-spacing: 0
+  text-transform: none
+
+// The step the diagram is about. Its label takes the container's on-colour,
+// since on-surface-variant is tuned for surface, not primary-container.
+.node-accent
+  background: var(--primary-container)
+  color: var(--on-primary-container)
+  border-color: transparent
+
+  .node-label
+    color: inherit
+
+.node-dashed
+  border-style: dashed
+  border-color: var(--outline)
+
+.node-center
+  align-items: center
+  text-align: center
+
+.flow-arrow
+  flex-shrink: 0
+  color: var(--outline)
+
+// A left-to-right pipeline
+.flow
+  display: flex
+  align-items: center
+  gap: .5rem
+
+  .node
+    flex: 1 1 0
+    min-width: 0
+    align-self: stretch
+
+.agents
+  display: flex
+  gap: .25rem
+
+  span
+    width: 1.25rem
+    height: 1.25rem
+    border-radius: $shape-full
+    background: var(--secondary-container)
+    border: 1px solid var(--outline)
+
+// One input splitting into side-by-side outcomes
+.tree
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: .5rem
+
+  > .node
+    max-width: 26rem
+
+.branches
+  width: 100%
+  display: grid
+  grid-template-columns: repeat(2, minmax(0, 1fr))
+  gap: 1rem
+
+.branch
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: .5rem
+
+  .node
+    width: 100%
+    box-sizing: border-box
+    flex-grow: 1
+    justify-content: center
+
+.chip
+  padding: .25rem .75rem
+  border-radius: $shape-full
+  border: 1px solid var(--outline)
+  color: var(--on-surface-variant)
+  font-size: .8125rem
+  font-weight: 500
+  text-align: center
+
+// Four boxes in a row get too narrow to read on a phone, so the pipeline
+// turns vertical and its arrows turn with it.
+@media (max-width: 34rem)
+  .flow
+    flex-direction: column
+    align-items: stretch
+
+  .flow .flow-arrow
+    align-self: center
+    transform: rotate(90deg)
+
+  .section-head h2
+    font-size: 1.625rem
