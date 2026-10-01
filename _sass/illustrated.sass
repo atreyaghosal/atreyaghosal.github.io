@@ -1,0 +1,207 @@
+// Vibrant-visuals toolkit for the "Papers Illustrated" post series.
+// Enable on a post with `illustrated: true` in its front matter.
+
+\:root
+  --il-red: #e5484d
+  --il-orange: #f2994a
+  --il-yellow: #d4a017
+  --il-green: #2fae60
+  --il-teal: #0d9488
+  --il-blue: #1d4ed8
+  --il-babyblue: #89cff0
+  --il-purple: #8b5cf6
+  --il-pink: #ec4899
+  --il-cyan: #0891b2
+  --il-gray: #6b7280
+  --il-page: #{$light}
+
+@media (prefers-color-scheme: dark)
+  \:root
+    --il-red: #ff6b6f
+    --il-orange: #ffab5e
+    --il-yellow: #f0d264
+    --il-green: #4ade80
+    --il-teal: #2dd4bf
+    --il-blue: #3b82f6
+    --il-babyblue: #a5d8f5
+    --il-purple: #a78bfa
+    --il-pink: #f472b6
+    --il-cyan: #22d3ee
+    --il-gray: #9ca3af
+    --il-page: #{$dark}
+
+$il-colors: "red" "orange" "yellow" "green" "teal" "blue" "babyblue" "purple" "pink" "cyan" "gray"
+
+// Colored inline text, e.g. <span class="hl hl-blue">source token</span>
+.hl
+  font-weight: 600
+
+// Colored "tiles" for words/tokens/letters, e.g.
+// <span class="tok tok-pink">чат</span> <span class="arrow arrow-blue">&rarr;</span> <span class="tok tok-blue">cat</span>
+.tok
+  display: inline-block
+  padding: .15em .55em
+  margin: .1em
+  border-radius: .35em
+  font-weight: 600
+  font-family: $font-family
+  font-size: .95em
+  color: $light
+
+  sub
+    font-size: .7em
+    color: inherit
+
+// The dark-mode palette is light enough that white text on it is hard to read
+@media (prefers-color-scheme: dark)
+  .tok
+    color: $dark
+
+.tok-yellow, .tok-babyblue
+  color: $dark
+
+// Outlined, unfilled tile for diagram items that aren't math symbols
+.tok-plain
+  background: none
+  color: inherit
+  box-shadow: inset 0 0 0 1.5px currentColor
+  font-weight: 400
+
+// A tile with a small note/example underneath:
+// <span class="tok-stack"><span class="tok tok-blue">x</span><span class="tok-note">example</span></span>
+.tok-stack
+  display: inline-flex
+  flex-direction: column
+  align-items: center
+  vertical-align: top
+
+// Muted via color, not opacity, so colored tiles inside notes/captions stay vivid
+.tok-note, .caption
+  color: lighten($dark, 30%)
+
+@media (prefers-color-scheme: dark)
+  .tok-note, .caption
+    color: darken($light, 25%)
+
+.tok-note
+  display: block
+  max-width: 11em
+  margin-top: .3em
+  font-size: .8em
+  line-height: 1.35
+  text-align: center
+
+// A row of tokens/arrows that wraps nicely, for alignment-style diagrams
+.tok-row
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  gap: .25em
+  margin: 1.25em 0
+
+// Keeps a function application like r(x) together on one line, without row gaps
+.tok-group
+  display: inline-flex
+  align-items: center
+  white-space: nowrap
+
+  .arrow
+    margin: 0 .05em
+
+// Rows of .tok-stack items: line tiles/arrows up along the top, notes hang below
+.tok-row-top
+  align-items: flex-start
+  column-gap: .6em
+
+// Colored arrows between tokens or ideas: &rarr; &rArr; &mapsto; etc.
+.arrow
+  display: inline-block
+  font-weight: 700
+  font-size: 1.2em
+  margin: 0 .15em
+
+// Callout box for asides/explanations, e.g. <div class="box box-blue">...</div>
+.box
+  border-left: .3em solid var(--il-blue)
+  background: reduce(6)
+  padding: .8em 1em
+  border-radius: .3em
+  margin: 1.5em 0
+
+  p:last-child
+    margin-bottom: 0
+
+// Italic caption under a figure/diagram
+.caption
+  font-style: italic
+  text-align: center
+  font-size: .9em
+  margin-top: -.5em
+  margin-bottom: 1.5em
+
+@each $name in $il-colors
+  .hl-#{$name}
+    color: var(--il-#{$name})
+
+  .tok-#{$name}
+    background: var(--il-#{$name})
+
+  .arrow-#{$name}
+    color: var(--il-#{$name})
+
+  .box-#{$name}
+    border-left-color: var(--il-#{$name})
+
+  // "Muted" symbol mode: a pale tint of the same hue
+  html[data-tok="muted"] .tok-#{$name}
+    background: color-mix(in srgb, var(--il-#{$name}) 30%, var(--il-page))
+
+// Symbol color modes, set on <html data-tok="…"> by the header toggle
+html[data-tok="muted"] .tok:not(.tok-plain)
+  color: inherit
+
+html[data-tok="off"] .tok:not(.tok-plain)
+  background: none
+  color: inherit
+  padding-left: .1em
+  padding-right: .1em
+
+// The toggle itself, in the page header
+body > header nav
+  margin-left: auto
+
+.tok-toggle
+  display: flex
+  align-items: center
+  gap: .3em
+  margin: .5em 0 .5em 2.2em
+  padding-left: 1em
+  border-left: 1px solid rgba($light, .25)
+  font-size: .85em
+
+  // Narrow screens: the toggle wraps onto its own line, so drop the divider
+  @media (max-width: 50em)
+    flex-basis: 100%
+    margin-left: 0
+    padding-left: 0
+    border-left: none
+
+  .tok-toggle-label
+    opacity: .7
+    margin-right: .2em
+
+  button
+    font: inherit
+    color: inherit
+    background: none
+    border: 1px solid rgba($light, .35)
+    border-radius: 1em
+    padding: .15em .75em
+    cursor: pointer
+
+    &:hover
+      border-color: rgba($light, .7)
+
+    &[aria-pressed="true"]
+      background: rgba($light, .2)
+      border-color: rgba($light, .7)

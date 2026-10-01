@@ -1,0 +1,23 @@
+<div class="tok-toggle" role="group" aria-label="Symbol colors">
+  <span class="tok-toggle-label">Symbols</span>
+  <button type="button" data-mode="on">Color</button>
+  <button type="button" data-mode="muted">Muted</button>
+  <button type="button" data-mode="off">Off</button>
+</div>
+<script>
+(function () {
+  var root = document.documentElement;
+  var buttons = document.querySelectorAll('.tok-toggle button');
+  function setMode(mode, save) {
+    root.setAttribute('data-tok', mode);
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.mode === mode); });
+    if (save) { try { localStorage.setItem('tokMode', mode); } catch (e) {} }
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('tokMode'); } catch (e) {}
+  setMode(['on', 'muted', 'off'].indexOf(saved) >= 0 ? saved : 'on', false);
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { setMode(b.dataset.mode, true); });
+  });
+})();
+</script>
