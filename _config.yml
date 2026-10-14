@@ -42,5 +42,6 @@ exclude:
   - vendor/ruby/
   - AGENTS.md
   - CLAUDE.md
+  - CLAUDE.local.md
   - DOCS.md
   - wiki

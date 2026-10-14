@@ -1,0 +1,83 @@
+<svg class="diagram-svg" width="100%" viewBox="0 64 682 224" role="img" aria-labelledby="law-title law-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="law-title">Lesson adaptation workflow</title>
+<desc id="law-desc">A lesson plan and a teacher query feed into Retrieve Classroom Data, which splits to three students (Esme and Kofi with IEPs, Lucia without). Each student's needs flow into an Adapt step, which produces the lesson plan adaptation: chunk lectures and add sketch-or-discuss tasks.</desc>
+<defs><marker id="law-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="svg-line" d="M2 1L8 5L2 9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+
+<rect class="svg-paper" x="42" y="72" width="44" height="58" rx="4"/>
+<line class="svg-ink" x1="50" y1="84" x2="72" y2="84" stroke-width="2.5" stroke-linecap="round"/>
+<line class="svg-ink-muted" x1="50" y1="96" x2="78" y2="96" stroke-linecap="round"/>
+<line class="svg-ink-muted" x1="50" y1="104" x2="78" y2="104" stroke-linecap="round"/>
+<line class="svg-ink-muted" x1="50" y1="112" x2="78" y2="112" stroke-linecap="round"/>
+<line class="svg-ink-muted" x1="50" y1="120" x2="68" y2="120" stroke-linecap="round"/>
+<text class="svg-strong" x="64" y="146" text-anchor="middle" dominant-baseline="central">Lesson plan</text>
+
+<rect class="svg-laptop" x="16" y="223" width="15" height="12" rx="1"/>
+<line class="svg-laptop-screen" x1="19" y1="227" x2="27" y2="227"/>
+<line class="svg-laptop-screen" x1="19" y1="231" x2="25" y2="231"/>
+<circle class="svg-ink" cx="9" cy="228" r="3.5" stroke-width="1.2"/>
+<path class="svg-ink" d="M9 231.5 L9 245 M9 245 L5 254 M9 245 L13 254 M9 236 L16 231" stroke-width="1.2" stroke-linecap="round"/>
+<text class="svg-muted" x="36" y="200" dominant-baseline="central">I'm going to</text>
+<text class="svg-muted" x="36" y="215" dominant-baseline="central">teach this</text>
+<text class="svg-muted" x="36" y="230" dominant-baseline="central">lesson to my</text>
+<text class="svg-muted" x="36" y="245" dominant-baseline="central">9:00am class,</text>
+<text class="svg-muted" x="36" y="260" dominant-baseline="central">what should I</text>
+<text class="svg-muted" x="36" y="275" dominant-baseline="central">modify?</text>
+
+<path class="svg-line" d="M88 101 L128 101 L128 162 L138 162" marker-end="url(#law-arrow)"/>
+<path class="svg-line" d="M120 238 L132 238 L132 198 L138 198" marker-end="url(#law-arrow)"/>
+
+<rect class="svg-step" x="140" y="144" width="96" height="72" rx="8"/>
+<text class="svg-step-text" x="188" y="162" text-anchor="middle" dominant-baseline="central">Retrieve</text>
+<text class="svg-step-text" x="188" y="180" text-anchor="middle" dominant-baseline="central">Classroom</text>
+<text class="svg-step-text" x="188" y="198" text-anchor="middle" dominant-baseline="central">Data</text>
+
+<line class="svg-line" x1="236" y1="180" x2="252" y2="180"/>
+<path class="svg-line" d="M252 180 L252 110 L268 110" marker-end="url(#law-arrow)"/>
+<line class="svg-line" x1="252" y1="180" x2="268" y2="180" marker-end="url(#law-arrow)"/>
+<path class="svg-line" d="M252 180 L252 250 L268 250" marker-end="url(#law-arrow)"/>
+
+<circle cx="286" cy="110" r="14" fill="#FAC775" stroke="#BA7517" stroke-width="0.5"/>
+<path d="M272 108 Q274 92 286 92 Q298 92 300 108 Q294 100 286 100 Q278 100 272 108 Z" fill="#633806"/>
+<circle cx="281" cy="110" r="1.5" fill="#412402"/><circle cx="291" cy="110" r="1.5" fill="#412402"/>
+<path d="M281 116 Q286 120 291 116" fill="none" stroke="#412402" stroke-width="1.2" stroke-linecap="round"/>
+<text class="svg-strong" x="306" y="104" dominant-baseline="central">Esme</text>
+<polygon points="311,113 313,118 318,118 314,121 316,126 311,123 306,126 308,121 304,118 309,118" fill="#EF9F27"/>
+<text class="svg-muted" x="321" y="120" dominant-baseline="central">IEP</text>
+
+<circle cx="286" cy="180" r="14" fill="#F5C4B3" stroke="#993C1D" stroke-width="0.5"/>
+<path d="M273 176 Q274 164 286 164 Q298 164 299 176 Q298 170 286 170 Q274 170 273 176 Z" fill="#2C2C2A"/>
+<circle cx="281" cy="180" r="1.5" fill="#4A1B0C"/><circle cx="291" cy="180" r="1.5" fill="#4A1B0C"/>
+<path d="M281 186 Q286 190 291 186" fill="none" stroke="#4A1B0C" stroke-width="1.2" stroke-linecap="round"/>
+<text class="svg-strong" x="306" y="174" dominant-baseline="central">Kofi</text>
+<polygon points="311,183 313,188 318,188 314,191 316,196 311,193 306,196 308,191 304,188 309,188" fill="#EF9F27"/>
+<text class="svg-muted" x="321" y="190" dominant-baseline="central">IEP</text>
+
+<path d="M270 252 Q268 232 286 232 Q304 232 302 252 L302 266 L270 266 Z" fill="#712B13"/>
+<circle cx="286" cy="250" r="14" fill="#FAECE7" stroke="#993C1D" stroke-width="0.5"/>
+<path d="M272 248 Q274 233 286 233 Q298 233 300 248 Q296 240 286 240 Q276 240 272 248 Z" fill="#712B13"/>
+<circle cx="281" cy="250" r="1.5" fill="#4A1B0C"/><circle cx="291" cy="250" r="1.5" fill="#4A1B0C"/>
+<path d="M281 256 Q286 260 291 256" fill="none" stroke="#4A1B0C" stroke-width="1.2" stroke-linecap="round"/>
+<text class="svg-strong" x="306" y="250" dominant-baseline="central">Lucia</text>
+
+<text class="svg-muted" x="404" y="78" text-anchor="middle" dominant-baseline="central">Identify what needs</text>
+<text class="svg-muted" x="404" y="93" text-anchor="middle" dominant-baseline="central">to be changed</text>
+<line class="svg-line" x1="358" y1="110" x2="450" y2="110" marker-end="url(#law-arrow)"/>
+<line class="svg-line" x1="358" y1="180" x2="450" y2="180" marker-end="url(#law-arrow)"/>
+<line class="svg-line" x1="358" y1="250" x2="450" y2="250" marker-end="url(#law-arrow)"/>
+
+<rect class="svg-step" x="452" y="98" width="64" height="164" rx="8"/>
+<text class="svg-step-text" x="484" y="180" text-anchor="middle" dominant-baseline="central">ADAPT</text>
+
+<line class="svg-line" x1="516" y1="180" x2="534" y2="180" marker-end="url(#law-arrow)"/>
+
+<text class="svg-strong" x="672" y="84" text-anchor="end" dominant-baseline="central">Lesson Plan Adaptation</text>
+<rect class="svg-frame" x="536" y="106" width="136" height="148" rx="8"/>
+<text class="svg-muted" x="546" y="124" dominant-baseline="central">Break any lecture</text>
+<text class="svg-muted" x="546" y="140" dominant-baseline="central">into short chunks.</text>
+<text class="svg-muted" x="546" y="156" dominant-baseline="central">After each chunk,</text>
+<text class="svg-muted" x="546" y="172" dominant-baseline="central">add a quick sketch-</text>
+<text class="svg-muted" x="546" y="188" dominant-baseline="central">or-discuss task,</text>
+<text class="svg-muted" x="546" y="204" dominant-baseline="central">since some students</text>
+<text class="svg-muted" x="546" y="220" dominant-baseline="central">retain more by</text>
+<text class="svg-muted" x="546" y="236" dominant-baseline="central">drawing.</text>
+</svg>

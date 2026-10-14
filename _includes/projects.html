@@ -14,12 +14,16 @@
 {%- for project in projects.items %}
   <li>
     <article class="card project">
+      {%- if project.label %}
       <p class="meta">{{ project.label }}</p>
+      {%- endif %}
       <h3>{{ project.title }}</h3>
       {{ project.description | markdownify }}
       {%- if project.diagram %}
       <figure class="diagram">
-        {% include diagrams/{{ project.diagram }}.html %}
+        {%- assign diagram_file = project.diagram %}
+        {%- unless diagram_file contains "." %}{% assign diagram_file = diagram_file | append: ".html" %}{% endunless %}
+        {% include diagrams/{{ diagram_file }} %}
         {%- if project.caption %}
         <figcaption>{{ project.caption | markdownify | remove: "<p>" | remove: "</p>" | strip }}</figcaption>
         {%- endif %}

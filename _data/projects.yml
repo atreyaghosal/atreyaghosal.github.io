@@ -2,16 +2,26 @@
 #
 # as_of: shown under the heading, so readers know how fresh the list is.
 # Each project:
-#   label        small uppercase line above the title
+#   label        small uppercase line above the title (optional)
 #   title        card heading
 #   description  Markdown, one short paragraph
-#   diagram      name of a file in _includes/diagrams/, without .html
+#   diagram      name of a file in _includes/diagrams/, without .html (an .svg keeps its extension)
 #   caption      one line under the diagram (Markdown)
 #   url          the long-form write-up, as a site path (/slug/)
 
 as_of: "Oct ’26"
 
 items:
+  - title: "Arachne: Teacher-Centered Adaptive Education"
+    description: >-
+      Generating and customizing lesson plans for each student in the
+      classroom, honoring IEPs and inputs by teachers, administrators and
+      parents. Using a domain-specific agentic harness to generate grounded,
+      non-hallucinatory lesson plan adaptations.
+    diagram: lesson_adaptation_workflow_v3.svg
+    caption: "Hidden steps decide what changes, one segment at a time, before a single visible step writes the plan."
+    url: /arachne_teacher_centered_adaptive_education/
+
   - label: "Library · Interactive fiction"
     title: "fictive: an agentic harness for interactive fiction"
     description: >-
@@ -22,14 +32,3 @@ items:
     diagram: fictive
     caption: "You author the story; `fictive` turns it into a chain of LLM agents that run the game."
     url: /agentic_harness_interactive_fiction_part_1/
-
-  - label: "Research · Bias in LLMs"
-    title: "Unequal Voices: how LLMs construct constrained queer narratives"
-    description: >-
-      Some AI bias is less noticeable than hate speech or stereotyping: models
-      carry *thematic* associations with certain groups. Given the same
-      question, a queer persona's answers keep returning to identity-related
-      conflict.
-    diagram: unequal_voices
-    caption: "Neither answer is a problem alone; the repeated focus on identity for queer personas is the bias."
-    url: /unequal_voices/

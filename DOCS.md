@@ -216,11 +216,18 @@ full cheat sheet and that post's symbol-to-colour map.
   `description` (Markdown), `diagram`, `caption` (Markdown) and `url` (the
   write-up's path, e.g. `/unequal_voices/`). `diagram` names a file in
   `_includes/diagrams/` without `.html`; leave it out for a card with no
-  diagram. Diagrams are built from text boxes, not images, using the classes in
+  diagram, and `label` or `description` out to keep a card bare. Diagrams
+  are built from text boxes, not images, using the classes in
   `classes.sass`: `flow` (a left-to-right pipeline that turns vertical on
   phones) or `tree` + `branches` + `branch` (one input splitting in two), with
   `node`, `node-label`, `node-accent` (the highlighted step), `node-dashed`,
   `chip` and `flow-arrow`. Copy an existing diagram to start a new one.
+  When a layout needs drawing, an inline SVG works too: give `diagram` its
+  full name with `.svg`, put the class `diagram-svg` on the `<svg>`, and
+  colour it with the `svg-*` classes in `classes.sass`, not `fill`/`stroke`
+  colours, so it follows dark mode. Give it a `<title>` and `<desc>` named by
+  `aria-labelledby`, and prefix its `id`s, since it's inlined into the page.
+  `lesson_adaptation_workflow_v3.svg` is the example.
 - **Change the photo**: replace `assets/images/about/hike-{480,960}.jpg` and
   update `width`/`height`/`alt` in `README.md`.
 

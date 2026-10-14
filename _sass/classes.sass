@@ -349,6 +349,59 @@ body > nav a.selected::after
   flex-shrink: 0
   color: var(--outline)
 
+// A drawn diagram, for layouts that text boxes can't carry. Its colours come
+// from these classes rather than the SVG, so it follows the scheme; only the
+// people's skin and hair keep fixed colours.
+.diagram-svg
+  display: block
+  font-family: inherit
+  font-size: 12px
+
+  text
+    fill: var(--on-surface)
+
+  .svg-strong
+    font-size: 14px
+    font-weight: 500
+
+  .svg-muted
+    fill: var(--on-surface-variant)
+
+  .svg-line
+    fill: none
+    stroke: var(--outline)
+    stroke-width: 1.5
+
+  .svg-ink, .svg-ink-muted
+    fill: none
+    stroke: var(--on-surface)
+
+  .svg-ink-muted
+    stroke: var(--on-surface-variant)
+
+  .svg-paper
+    fill: var(--surface)
+    stroke: var(--outline-variant)
+
+  .svg-frame
+    fill: none
+    stroke: var(--outline-variant)
+
+  .svg-laptop
+    fill: var(--on-surface-variant)
+
+  .svg-laptop-screen
+    stroke: var(--surface)
+    stroke-width: .8
+
+  .svg-step
+    fill: var(--primary-container)
+
+  .svg-step-text
+    fill: var(--on-primary-container)
+    font-size: 14px
+    font-weight: 500
+
 // A left-to-right pipeline
 .flow
   display: flex

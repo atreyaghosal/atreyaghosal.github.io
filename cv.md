@@ -6,7 +6,7 @@ layout: cv_layout
 
 PhD researcher with the UtahNLP group at the University of Utah, advised by [Prof. Vivek Srikumar](https://svivek.com/). I research and develop Artificial Intelligence/Machine Learning applications, and I'm passionate about turning cutting-edge AI research into real-world applications that humans can work with.
 
-My research focuses on safe, trustworthy and human-aligned AI, and on human-AI collaboration. By integrating principles from machine learning and UI/UX design, I strive to create AI systems that enhance human productivity, skill and decision-making. My work has identified the information that people need, and built AI assistants that give them accurate, timely and interpretable responses. My current focus is on aligning Large Language Models to broad, narrative-level value systems.
+My research focuses on safe, trustworthy and human-aligned AI, and on human-AI collaboration. By integrating principles from machine learning and UI/UX design, I strive to create AI systems that enhance human productivity, skill and decision-making.
 
 ## Publications
 
@@ -65,14 +65,6 @@ Coded and demonstrated techniques to search Indian language corpora for typologi
 `2019` _Teaching Assistant, Principles of Programming Languages_ \\
 __International Institute of Information Technology, Hyderabad__ \\
 Guided students through writing a parser and interpreter for a Lisp-like programming language, and demonstrated the basic principles of programming in Haskell.
-
-## Honors
-
-Dean's List
-
-## Skills
-
-Python, C, MySQL, Haskell
 
 <!-- ### Footer
 
