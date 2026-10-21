@@ -4,7 +4,12 @@ layout: post
 categories: misc
 ---
 
-Centaurus is a classroom management and lesson planning system that uses AI to reduce the cognitive load of teachers in the classroom. Centaurus is built around the idea that a teacher knows their classroom- Centaurus helps them adapt their lesson plans to it. Centaurus also supports IEPs, with specific modules for grounding lesson plan adaptations in IEP documents.
+<figure class="diagram">
+{% include diagrams/lesson_adaptation_workflow_v3.svg %}
+<figcaption>A custom harness for lesson planning and adaptation.</figcaption>
+</figure>
+
+Centaurus is a classroom management and lesson planning system that uses AI to reduce the cognitive load of teachers in the classroom. Centaurus is built around the idea that a teacher knows their classroom- Centaurus helps them adapt their lesson plans to it. Developed in collaboration with Ramona Lucius of Hands-On Folk Tales, [Farhan Ishmam](https://farhanishmam.github.io/), and [Catherine Bao](https://www.catherinebao.com/). Centaurus specifically supports IEPs, with specific modules for grounding lesson plan adaptations in IEP documents.
 
 ## A Custom Harness for Lesson Planning
 
@@ -25,3 +30,7 @@ Identifying IEP-based access needs matters in particular, because teachers in so
 ### Step 3: Adapt each lesson segment individually
 
 Each segment is adapted on its own, keeping it faithful to the original lesson plan.
+
+## To Be Continued...
+
+This is an in-progress post. I hope to talk about the assembly of agents that implement the above IEP-lesson-plan-adaptation process.

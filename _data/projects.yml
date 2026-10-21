@@ -19,7 +19,7 @@ items:
       parents. Using a domain-specific agentic harness to generate grounded,
       non-hallucinatory lesson plan adaptations.
     diagram: lesson_adaptation_workflow_v3.svg
-    caption: "Hidden steps decide what changes, one segment at a time, before a single visible step writes the plan."
+    caption: "A custom harness for lesson planning and adaptation."
     url: /arachne_teacher_centered_adaptive_education/
 
   - label: "Library · Interactive fiction"

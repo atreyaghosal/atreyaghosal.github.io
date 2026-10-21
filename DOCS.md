@@ -143,6 +143,7 @@ fresh HTML with a stale cached stylesheet.
    categories: misc
    mathjax: true        # optional: KaTeX
    illustrated: true    # optional: Papers Illustrated toolkit
+   published: false     # optional: keep the file but leave it out of the site
    ---
    ```
 

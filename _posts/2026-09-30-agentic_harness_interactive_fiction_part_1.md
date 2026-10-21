@@ -214,3 +214,7 @@ When a character enters play, a live character sheet is made from its character 
 ```
 
 The Encounter Creator adds characters to `present` when it starts an encounter. The Game State Handler adds and removes them as the story moves.
+
+## To Be Continued...
+
+Next up: more about the specific flows for this game, handling state.

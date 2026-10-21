@@ -3,6 +3,7 @@ title:  "Papers Illustrated: Found In Translation"
 mathjax: true
 illustrated: true
 layout: post
+published: false
 categories: misc
 ---
 

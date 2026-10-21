@@ -295,13 +295,16 @@ body > nav a.selected::after
 // Project diagrams (_includes/diagrams/). They are built from text boxes, not
 // images, so screen readers and search read them and they follow the scheme.
 .diagram
-  margin: 0
   padding: 1.25rem 1rem
   border-radius: $shape-md
   background: var(--surface-container)
 
   figcaption
     margin-top: .75rem
+
+// In a card, the actions row below sets the gap.
+.card .diagram
+  margin-bottom: 0
 
 .node
   display: flex
